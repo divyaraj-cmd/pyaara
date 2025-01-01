@@ -4,6 +4,7 @@ import { calculateLoveScore, storeLoveScore, formatName } from './loveScore.js';
 document.getElementById("loveForm").addEventListener("submit", async function (event) {
     event.preventDefault(); // Prevent page refresh
 
+    // Format names before using them
     const name1 = formatName(document.getElementById("name1").value.trim());
     const name2 = formatName(document.getElementById("name2").value.trim());
 
@@ -12,6 +13,7 @@ document.getElementById("loveForm").addEventListener("submit", async function (e
         return;
     }
 
+    // Calculate love score using formatted names
     const loveScore = calculateLoveScore(name1, name2);
     document.getElementById("result").textContent = `Your love score is: ${loveScore}% 💕`;
 
