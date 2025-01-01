@@ -1,13 +1,14 @@
+let loveScore = 0;
 function calculateLoveScore(name1, name2) {
     const combinedName = name1 + name2;
-    let loveScore = 0;
+    
     for (let i = 0; i < combinedName.length; i++) {
         loveScore += combinedName.charCodeAt(i);
     }
     return loveScore % 101; // Score between 0 and 100
 }
 
-document.getElementById("loveForm").addEventListener("submit", function (event) {
+document.getElementById("submitData").addEventListener("click", function (event) {
     event.preventDefault(); // Prevent page refresh
 
     const name1 = document.getElementById("name1").value.trim();
