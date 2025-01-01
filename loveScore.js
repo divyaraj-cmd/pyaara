@@ -12,6 +12,12 @@ export function calculateLoveScore(name1, name2) {
     return loveScore % 101; // Score between 0 and 100
 }
 
+// Function to format names
+export function formatName(name) {
+    if (!name) return ""; // Return empty string if name is empty
+    return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+}
+
 export async function storeLoveScore(name1, name2, loveScore) {
     try {
         await addDoc(collection(db, "users"), {
