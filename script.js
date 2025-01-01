@@ -19,6 +19,13 @@ document.getElementById("submitData").addEventListener("click", function (event)
         return;
     }
 
+    var auname=document.getElementById('name1').value;
+    var acname=document.getElementById('name2').value;
     const loveScore = calculateLoveScore(name1, name2);
     document.getElementById("result").textContent = `Your love score is: ${loveScore}% 💕`;
+    addDoc(collection(db, "users"), {
+        uname: auname,
+        cname: acname,
+        country: loveScore
+      });
 });
