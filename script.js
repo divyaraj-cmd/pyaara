@@ -20,3 +20,12 @@ document.getElementById("loveForm").addEventListener("submit", async function (e
     // Store the result in Firestore
     await storeLoveScore(name1, name2, loveScore);
 });
+
+const elements = document.getElementsByClassName("textin");
+
+// Add a click event listener to each element
+for (let element of elements) {
+    element.addEventListener("click", function(event) {
+        document.getElementById("result").textContent = " ";
+    });
+}
