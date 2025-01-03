@@ -26,6 +26,6 @@ const elements = document.getElementsByClassName("textin");
 // Add a click event listener to each element
 for (let element of elements) {
     element.addEventListener("click", function(event) {
-        document.getElementById("result").textContent = " ";
+        document.getElementById("result").textContent = "";
     });
 }
